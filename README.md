@@ -12,4 +12,10 @@ In active development. Currently working on baseline surrogate.
 
 ## Roadmap
 
-- [ ] Day 1: AbBbench dataloader, cluster-based splits
+- [ ]  AbBbench dataloader, cluster-based splits
+- [ ]  ESM-2 baseline surrogate
+- [ ]  GP surrogate with uncertainty
+- [ ]  Acquisition function + proposer
+- [ ]  Closed loop, baselines, regret curves
+- [ ]  GNN structural surrogate
+- [ ]  Multi-objective extension 
