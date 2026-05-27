@@ -1,10 +1,20 @@
 # antibody-lab-in-the-loop
 
-A from-scratch implementation of active learning for antibody binding affinity optimisation.
+A from-scratch implementation of active learning for antibody binding affinity optimisation. Uses the AbBiBench dataset as a restrospective oracle: a generative proposer suggests antibody variants, an uncertainty-aware suurogate predicts their binding scores, and an acquisition function selects informative batches to "query" the oracle. The surrogate retrains each round and the loop closes.
 
-## Aim
+# Architecture
 
-Build a closed-loop system that proposes antibody variants, predicts their binding affinity with calibrated uncertainty, and selects informative batches for evaluation - using AbBiBench Benchamark dataset as retrospective oracle.
+┌─────────────┐      ┌────────────┐      ┌──────────────┐
+│  Proposer   │─────▶│ Surrogate  │─────▶│ Acquisition  │
+│ (mutations) │      │ (GP / NN)  │      │  (qEI + DPP) │
+└─────────────┘      └────────────┘      └──────┬───────┘
+       ▲                    ▲                    │
+       │                    │                    ▼
+       │             ┌────────────┐      ┌──────────────┐
+       └─────────────│   Oracle   │◀─────│    Batch     │
+                     │ (AbBiBench)│      │  (selected)  │
+                     └────────────┘      └──────────────┘
+
 
 ## Status
 
