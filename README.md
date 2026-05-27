@@ -5,7 +5,7 @@ A from-scratch implementation of active learning for antibody binding affinity o
 # Architecture
 
 ┌─────────────┐      ┌────────────┐      ┌──────────────┐
-│  Proposer   │─────▶│ Surrogate  │─────▶│ Acquisition  │
+│  Proposer   │─────▶│ Surrogate │─────▶│ Acquisition  │
 │ (mutations) │      │ (GP / NN)  │      │  (qEI + DPP) │
 └─────────────┘      └────────────┘      └──────┬───────┘
        ▲                    ▲                    │
